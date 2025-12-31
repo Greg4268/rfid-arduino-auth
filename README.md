@@ -1,15 +1,15 @@
-# 🔐 Arduino RFID Authenticator (R4 WiFi + RC522)
+# Arduino RFID Authenticator (R4 WiFi + RC522)
 
 This project is a simple RFID authentication system built using an **Arduino R4 WiFi**, an **RC522 RFID module**, and basic components the built-in LED matrix and a buzzer. It reads RFID card data and provides authentication feedback using a check-mark and success tones (if authorized) or an 'X' and error tones (if unauthorized).
 
-## 🛠️ Hardware Used
+## Hardware Used
 
 - **Arduino R4 WiFi**
 - **RC522 RFID Module**
 - **Buzzer**
 - **Jumper Wires & Breadboard**
 
-## 📷 How It Works
+## How It Works
 
 When an RFID card is brought near the RC522 reader:
 
@@ -23,19 +23,7 @@ When an RFID card is brought near the RC522 reader:
      - LED Matrix will draw an 'X'
      - Buzzer plays low-pitched error tones
 
-### 🧠 Logic Overview
-
-```text
-Loop:
- ├── Check for new RFID card
- ├── Read UID
- ├── Compare to authorized UID
- │    ├── If match → successAuth()
- │    └── Else → failAuth()
- └── Halt reading, wait briefly
-```
-
-## 🔧 Pin Configuration
+## Pin Configuration
 
 | Component  | Arduino Pin |
 | ---------- | ----------- |
@@ -46,7 +34,7 @@ Loop:
 | RC522 SCK  | 13 (SPI)    |
 | Buzzer     | 5           |
 
-## 💾 Code Summary
+## Code Summary
 
 - **Authorized UID:**
 
@@ -65,17 +53,7 @@ Loop:
   - `successAuth()` — lights LED matrix and beeps twice.
   - `failAuth()` — blinks LED matrix and beeps 3 times.
 
-## ⚠️ Notes
-
-- The project uses short delays to avoid multiple quick reads (`delay(1500)`).
-
-## 🚀 Future Improvements
-
-- Store UIDs in EEPROM or external storage.
-- Add OLED display for visual feedback.
-- WiFi logging or integration with a web server for remote tracking.
-
-## 📷 Demo
+## Demo
 
 ### Sorry in advance, the wiring makes it difficult to see who's connected to what :/ 
 
